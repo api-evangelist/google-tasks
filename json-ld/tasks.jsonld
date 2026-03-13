@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gtasks": "https://tasks.googleapis.com/tasks/v1/",
+    "Task": "schema:Action",
+    "TaskList": "schema:ItemList",
+    "id": "schema:identifier",
+    "title": "schema:name",
+    "notes": "schema:description",
+    "status": "schema:actionStatus",
+    "due": {
+      "@id": "schema:scheduledTime",
+      "@type": "schema:DateTime"
+    },
+    "completed": {
+      "@id": "schema:endTime",
+      "@type": "schema:DateTime"
+    },
+    "updated": {
+      "@id": "schema:dateModified",
+      "@type": "schema:DateTime"
+    },
+    "selfLink": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "parent": "schema:isPartOf",
+    "position": "schema:position",
+    "links": "schema:relatedLink"
+  }
+}

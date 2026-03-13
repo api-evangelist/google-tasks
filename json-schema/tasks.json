@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-tasks/refs/heads/main/json-schema/tasks.json",
+  "title": "Google Task",
+  "description": "A task resource from the Google Tasks API.",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "const": "tasks#task"
+    },
+    "id": {
+      "type": "string",
+      "description": "Task identifier."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the task."
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification time of the task."
+    },
+    "selfLink": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL pointing to this task."
+    },
+    "parent": {
+      "type": "string",
+      "description": "Parent task identifier."
+    },
+    "position": {
+      "type": "string",
+      "description": "String indicating the position of the task among its sibling tasks."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes describing the task."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["needsAction", "completed"],
+      "description": "Status of the task."
+    },
+    "due": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Due date of the task."
+    },
+    "completed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Completion date of the task."
+    },
+    "deleted": {
+      "type": "boolean",
+      "description": "Flag indicating whether the task has been deleted."
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "Flag indicating whether the task is hidden."
+    },
+    "links": {
+      "type": "array",
+      "description": "Collection of links related to this task.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "required": ["kind", "id", "title"]
+}

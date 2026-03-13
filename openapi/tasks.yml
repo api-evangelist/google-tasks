@@ -1,0 +1,409 @@
+openapi: 3.1.0
+info:
+  title: Google Tasks API
+  description: >-
+    The Google Tasks API lets you search, read, and update Google Tasks content
+    and metadata. You can manage task lists and individual tasks, including
+    creating, updating, moving, and deleting tasks programmatically.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/tasks
+servers:
+  - url: https://tasks.googleapis.com/tasks/v1
+paths:
+  /users/@me/lists:
+    get:
+      operationId: listTaskLists
+      summary: List task lists
+      description: Returns all the authenticated user's task lists.
+      parameters:
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            maximum: 100
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListsResponse'
+    post:
+      operationId: insertTaskList
+      summary: Create a task list
+      description: Creates a new task list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+  /users/@me/lists/{taskListId}:
+    get:
+      operationId: getTaskList
+      summary: Get a task list
+      description: Returns the authenticated user's specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+    put:
+      operationId: updateTaskList
+      summary: Update a task list
+      description: Updates the authenticated user's specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+    patch:
+      operationId: patchTaskList
+      summary: Patch a task list
+      description: Updates the authenticated user's specified task list with patch semantics.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      operationId: deleteTaskList
+      summary: Delete a task list
+      description: Deletes the authenticated user's specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /lists/{taskListId}/tasks:
+    get:
+      operationId: listTasks
+      summary: List tasks
+      description: Returns all tasks in the specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            maximum: 100
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: showCompleted
+          in: query
+          schema:
+            type: boolean
+        - name: showHidden
+          in: query
+          schema:
+            type: boolean
+        - name: dueMin
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: dueMax
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksResponse'
+    post:
+      operationId: insertTask
+      summary: Create a task
+      description: Creates a new task on the specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: parent
+          in: query
+          schema:
+            type: string
+        - name: previous
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+  /lists/{taskListId}/tasks/{taskId}:
+    get:
+      operationId: getTask
+      summary: Get a task
+      description: Returns the specified task.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+    put:
+      operationId: updateTask
+      summary: Update a task
+      description: Updates the specified task.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      operationId: deleteTask
+      summary: Delete a task
+      description: Deletes the specified task from the task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /lists/{taskListId}/tasks/{taskId}/move:
+    post:
+      operationId: moveTask
+      summary: Move a task
+      description: >-
+        Moves the specified task to another position in the task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: parent
+          in: query
+          schema:
+            type: string
+        - name: previous
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /lists/{taskListId}/clear:
+    post:
+      operationId: clearTasks
+      summary: Clear completed tasks
+      description: Clears all completed tasks from the specified task list.
+      parameters:
+        - name: taskListId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful response
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        kind:
+          type: string
+          const: "tasks#task"
+        id:
+          type: string
+        etag:
+          type: string
+        title:
+          type: string
+        updated:
+          type: string
+          format: date-time
+        selfLink:
+          type: string
+          format: uri
+        parent:
+          type: string
+        position:
+          type: string
+        notes:
+          type: string
+        status:
+          type: string
+          enum:
+            - needsAction
+            - completed
+        due:
+          type: string
+          format: date-time
+        completed:
+          type: string
+          format: date-time
+        deleted:
+          type: boolean
+        hidden:
+          type: boolean
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              description:
+                type: string
+              link:
+                type: string
+                format: uri
+    TaskList:
+      type: object
+      properties:
+        kind:
+          type: string
+          const: "tasks#taskList"
+        id:
+          type: string
+        etag:
+          type: string
+        title:
+          type: string
+        updated:
+          type: string
+          format: date-time
+        selfLink:
+          type: string
+          format: uri
+    TasksResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+    TaskListsResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskList'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/tasks: Create, edit, organize, and delete all your tasks
+            https://www.googleapis.com/auth/tasks.readonly: View your tasks
+security:
+  - oauth2: []
