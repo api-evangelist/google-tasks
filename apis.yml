@@ -1,5 +1,5 @@
 aid: google-tasks
-name: Google Tasks API
+name: Google Tasks
 description: >-
   The Google Tasks API lets you search, read, and update Google Tasks content
   and metadata. You can create, update, delete, and organize tasks across
