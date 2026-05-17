@@ -33,28 +33,28 @@ apis:
         url: openapi/tasks.yml
       - type: Authentication
         url: https://developers.google.com/workspace/tasks/auth
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/workspace/tasks/overview
       - type: JSONSchema
         url: json-schema/tasks.json
 common:
   - type: Portal
     url: https://developers.google.com/tasks
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/workspace/tasks/overview
   - type: Documentation
     url: https://developers.google.com/tasks
   - type: Authentication
     url: https://developers.google.com/workspace/tasks/auth
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/workspace/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://developers.google.com/tasks/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/tasks.jsonld
 maintainers:
   - FN: Kin Lane
