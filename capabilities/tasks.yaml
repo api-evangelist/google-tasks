@@ -1,0 +1,629 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Tasks API
+  description: 'Google Tasks API. 13 operations. Lead operation: Clear completed tasks. Self-contained Naftiko capability
+    covering one Google Tasks business surface.'
+  tags:
+  - Google Tasks
+  - Google Tasks API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_TASKS_API_KEY: GOOGLE_TASKS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: tasks
+    baseUri: https://tasks.googleapis.com/tasks/v1
+    description: Google Tasks API business capability. Self-contained, no shared references.
+    resources:
+    - name: lists-taskListId-clear
+      path: /lists/{taskListId}/clear
+      operations:
+      - name: cleartasks
+        method: POST
+        description: Clear completed tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+    - name: lists-taskListId-tasks
+      path: /lists/{taskListId}/tasks
+      operations:
+      - name: listtasks
+        method: GET
+        description: List tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: showCompleted
+          in: query
+          type: boolean
+        - name: showHidden
+          in: query
+          type: boolean
+        - name: dueMin
+          in: query
+          type: string
+        - name: dueMax
+          in: query
+          type: string
+      - name: inserttask
+        method: POST
+        description: Create a task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: parent
+          in: query
+          type: string
+        - name: previous
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: lists-taskListId-tasks-taskId
+      path: /lists/{taskListId}/tasks/{taskId}
+      operations:
+      - name: gettask
+        method: GET
+        description: Get a task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: taskId
+          in: path
+          type: string
+          required: true
+      - name: updatetask
+        method: PUT
+        description: Update a task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: taskId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletetask
+        method: DELETE
+        description: Delete a task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: taskId
+          in: path
+          type: string
+          required: true
+    - name: lists-taskListId-tasks-taskId-move
+      path: /lists/{taskListId}/tasks/{taskId}/move
+      operations:
+      - name: movetask
+        method: POST
+        description: Move a task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: taskId
+          in: path
+          type: string
+          required: true
+        - name: parent
+          in: query
+          type: string
+        - name: previous
+          in: query
+          type: string
+    - name: users-@me-lists
+      path: /users/@me/lists
+      operations:
+      - name: listtasklists
+        method: GET
+        description: List task lists
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: inserttasklist
+        method: POST
+        description: Create a task list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: users-@me-lists-taskListId
+      path: /users/@me/lists/{taskListId}
+      operations:
+      - name: gettasklist
+        method: GET
+        description: Get a task list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+      - name: updatetasklist
+        method: PUT
+        description: Update a task list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: patchtasklist
+        method: PATCH
+        description: Patch a task list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletetasklist
+        method: DELETE
+        description: Delete a task list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: taskListId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_TASKS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: tasks-rest
+    port: 8080
+    description: REST adapter for Google Tasks API. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/lists/{tasklistid}/clear
+      name: lists-tasklistid-clear
+      description: REST surface for lists-taskListId-clear.
+      operations:
+      - method: POST
+        name: cleartasks
+        description: Clear completed tasks
+        call: tasks.cleartasks
+        with:
+          taskListId: rest.taskListId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/lists/{tasklistid}/tasks
+      name: lists-tasklistid-tasks
+      description: REST surface for lists-taskListId-tasks.
+      operations:
+      - method: GET
+        name: listtasks
+        description: List tasks
+        call: tasks.listtasks
+        with:
+          taskListId: rest.taskListId
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          showCompleted: rest.showCompleted
+          showHidden: rest.showHidden
+          dueMin: rest.dueMin
+          dueMax: rest.dueMax
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: inserttask
+        description: Create a task
+        call: tasks.inserttask
+        with:
+          taskListId: rest.taskListId
+          parent: rest.parent
+          previous: rest.previous
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/lists/{tasklistid}/tasks/{taskid}
+      name: lists-tasklistid-tasks-taskid
+      description: REST surface for lists-taskListId-tasks-taskId.
+      operations:
+      - method: GET
+        name: gettask
+        description: Get a task
+        call: tasks.gettask
+        with:
+          taskListId: rest.taskListId
+          taskId: rest.taskId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatetask
+        description: Update a task
+        call: tasks.updatetask
+        with:
+          taskListId: rest.taskListId
+          taskId: rest.taskId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletetask
+        description: Delete a task
+        call: tasks.deletetask
+        with:
+          taskListId: rest.taskListId
+          taskId: rest.taskId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/lists/{tasklistid}/tasks/{taskid}/move
+      name: lists-tasklistid-tasks-taskid-move
+      description: REST surface for lists-taskListId-tasks-taskId-move.
+      operations:
+      - method: POST
+        name: movetask
+        description: Move a task
+        call: tasks.movetask
+        with:
+          taskListId: rest.taskListId
+          taskId: rest.taskId
+          parent: rest.parent
+          previous: rest.previous
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/me/lists
+      name: users-me-lists
+      description: REST surface for users-@me-lists.
+      operations:
+      - method: GET
+        name: listtasklists
+        description: List task lists
+        call: tasks.listtasklists
+        with:
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: inserttasklist
+        description: Create a task list
+        call: tasks.inserttasklist
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/me/lists/{tasklistid}
+      name: users-me-lists-tasklistid
+      description: REST surface for users-@me-lists-taskListId.
+      operations:
+      - method: GET
+        name: gettasklist
+        description: Get a task list
+        call: tasks.gettasklist
+        with:
+          taskListId: rest.taskListId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatetasklist
+        description: Update a task list
+        call: tasks.updatetasklist
+        with:
+          taskListId: rest.taskListId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchtasklist
+        description: Patch a task list
+        call: tasks.patchtasklist
+        with:
+          taskListId: rest.taskListId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletetasklist
+        description: Delete a task list
+        call: tasks.deletetasklist
+        with:
+          taskListId: rest.taskListId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: tasks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Tasks API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: clear-completed-tasks
+      description: Clear completed tasks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tasks.cleartasks
+      with:
+        taskListId: tools.taskListId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-tasks
+      description: List tasks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: tasks.listtasks
+      with:
+        taskListId: tools.taskListId
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        showCompleted: tools.showCompleted
+        showHidden: tools.showHidden
+        dueMin: tools.dueMin
+        dueMax: tools.dueMax
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-task
+      description: Create a task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tasks.inserttask
+      with:
+        taskListId: tools.taskListId
+        parent: tools.parent
+        previous: tools.previous
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-task
+      description: Get a task
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: tasks.gettask
+      with:
+        taskListId: tools.taskListId
+        taskId: tools.taskId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-task
+      description: Update a task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: tasks.updatetask
+      with:
+        taskListId: tools.taskListId
+        taskId: tools.taskId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-task
+      description: Delete a task
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: tasks.deletetask
+      with:
+        taskListId: tools.taskListId
+        taskId: tools.taskId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: move-task
+      description: Move a task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tasks.movetask
+      with:
+        taskListId: tools.taskListId
+        taskId: tools.taskId
+        parent: tools.parent
+        previous: tools.previous
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-task-lists
+      description: List task lists
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: tasks.listtasklists
+      with:
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-task-list
+      description: Create a task list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tasks.inserttasklist
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-task-list
+      description: Get a task list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: tasks.gettasklist
+      with:
+        taskListId: tools.taskListId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-task-list
+      description: Update a task list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: tasks.updatetasklist
+      with:
+        taskListId: tools.taskListId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patch-task-list
+      description: Patch a task list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: tasks.patchtasklist
+      with:
+        taskListId: tools.taskListId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-task-list
+      description: Delete a task list
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: tasks.deletetasklist
+      with:
+        taskListId: tools.taskListId
+      outputParameters:
+      - type: object
+        mapping: $.
