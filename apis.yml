@@ -36,6 +36,8 @@ apis:
       - type: JSONSchema
         url: json-schema/tasks.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-tasks-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/googleworkspace
   - type: Portal
@@ -56,6 +58,8 @@ common:
     url: https://developers.google.com/tasks/support
   - type: JSONLD
     url: json-ld/tasks.jsonld
+  - url: https://workspaceupdates.googleblog.com/feeds/posts/default?alt=rss
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

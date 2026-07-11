@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/tasks.yml
+schemes:
+- name: oauth2
+  source: openapi/tasks.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+    tokenUrl: https://oauth2.googleapis.com/token
+scopes:
+- scope: https://www.googleapis.com/auth/tasks
+  description: Create, edit, organize, and delete all your tasks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/tasks.yml
+- scope: https://www.googleapis.com/auth/tasks.readonly
+  description: View your tasks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/tasks.yml
