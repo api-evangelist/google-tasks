@@ -36,6 +36,12 @@ apis:
       - type: JSONSchema
         url: json-schema/tasks.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-tasks-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-tasks-domain-security.yml
+  - type: Authentication
+    url: authentication/google-tasks-authentication.yml
   - type: OAuthScopes
     url: scopes/google-tasks-scopes.yml
   - type: GitHubOrganization
