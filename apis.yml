@@ -36,6 +36,8 @@ apis:
       - type: JSONSchema
         url: json-schema/tasks.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-tasks-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-tasks-vulnerability-disclosure.yml
   - type: DomainSecurity
