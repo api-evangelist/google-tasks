@@ -1,0 +1,175 @@
+openapi: 3.1.0
+info:
+  title: Google Tasks Lists Users API
+  description: The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can manage task lists and individual tasks, including creating, updating, moving, and deleting tasks programmatically.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/tasks
+servers:
+- url: https://tasks.googleapis.com/tasks/v1
+security:
+- oauth2: []
+tags:
+- name: Users
+paths:
+  /users/@me/lists:
+    get:
+      operationId: listTaskLists
+      summary: List task lists
+      description: Returns all the authenticated user's task lists.
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+          maximum: 100
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListsResponse'
+      tags:
+      - Users
+    post:
+      operationId: insertTaskList
+      summary: Create a task list
+      description: Creates a new task list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+      tags:
+      - Users
+  /users/@me/lists/{taskListId}:
+    get:
+      operationId: getTaskList
+      summary: Get a task list
+      description: Returns the authenticated user's specified task list.
+      parameters:
+      - name: taskListId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+      tags:
+      - Users
+    put:
+      operationId: updateTaskList
+      summary: Update a task list
+      description: Updates the authenticated user's specified task list.
+      parameters:
+      - name: taskListId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Users
+    patch:
+      operationId: patchTaskList
+      summary: Patch a task list
+      description: Updates the authenticated user's specified task list with patch semantics.
+      parameters:
+      - name: taskListId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Users
+    delete:
+      operationId: deleteTaskList
+      summary: Delete a task list
+      description: Deletes the authenticated user's specified task list.
+      parameters:
+      - name: taskListId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Successful deletion
+      tags:
+      - Users
+components:
+  schemas:
+    TaskList:
+      type: object
+      properties:
+        kind:
+          type: string
+          const: tasks#taskList
+        id:
+          type: string
+        etag:
+          type: string
+        title:
+          type: string
+        updated:
+          type: string
+          format: date-time
+        selfLink:
+          type: string
+          format: uri
+    TaskListsResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskList'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/tasks: Create, edit, organize, and delete all your tasks
+            https://www.googleapis.com/auth/tasks.readonly: View your tasks
