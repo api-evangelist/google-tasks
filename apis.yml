@@ -4,7 +4,20 @@ description: >-
   The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can create, update,
   delete, and organize tasks across multiple task lists, move tasks between positions, and manage task completion status
   programmatically.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-tasks.png
 url: https://raw.githubusercontent.com/api-evangelist/google-tasks/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,24 +31,45 @@ tags:
   - Todo
   - Workspace
 apis:
-  - name: Google Tasks API v1
-    description: >-
-      The Google Tasks API provides programmatic access to Google Tasks for managing task lists and individual tasks.
-      Supports creating, reading, updating, deleting, moving, and clearing tasks.
-    humanURL: https://developers.google.com/tasks
-    baseURL: https://tasks.googleapis.com/tasks/v1
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/workspace/tasks/reference/rest
-      - type: OpenAPI
-        url: openapi/tasks.yml
-      - type: Authentication
-        url: https://developers.google.com/workspace/tasks/auth
-      - type: GettingStarted
-        url: https://developers.google.com/workspace/tasks/overview
-      - type: JSONSchema
-        url: json-schema/tasks.json
+- aid: google-tasks:google-tasks-lists-api
+  name: Google Tasks Lists API
+  description: The Lists API from Google Tasks — 4 operation(s) for lists.
+  humanURL: https://developers.google.com/tasks
+  baseURL: https://tasks.googleapis.com/tasks/v1
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/google-tasks-lists-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/tasks/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/workspace/tasks/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/tasks/overview
+  - type: JSONSchema
+    url: json-schema/tasks.json
+- aid: google-tasks:google-tasks-users-api
+  name: Google Tasks Users API
+  description: The Users API from Google Tasks — 2 operation(s) for users.
+  humanURL: https://developers.google.com/tasks
+  baseURL: https://tasks.googleapis.com/tasks/v1
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/google-tasks-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/tasks/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/workspace/tasks/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/tasks/overview
+  - type: JSONSchema
+    url: json-schema/tasks.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-tasks/overview
   - type: AgenticAccess
     url: agentic-access/google-tasks-agentic-access.yml
   - type: VulnerabilityDisclosure
