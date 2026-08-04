@@ -1,0 +1,16 @@
+{
+  "provider": "google-tasks",
+  "sources": [
+    "google-tasks-lists-api-openapi.yml",
+    "google-tasks-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-tasks-lists-api-openapi.yml",
+    "google-tasks-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

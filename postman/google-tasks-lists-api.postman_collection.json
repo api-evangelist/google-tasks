@@ -1,0 +1,868 @@
+{
+  "info": {
+    "_postman_id": "d0324433-1900-4b93-96a0-0c87647efc75",
+    "name": "Google Tasks Lists API",
+    "description": "The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can manage task lists and individual tasks, including creating, updating, moving, and deleting tasks programmatically.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:50:26.000Z",
+    "updatedAt": "2026-07-28T01:50:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d0324433-1900-4b93-96a0-0c87647efc75"
+  },
+  "item": [
+    {
+      "name": "lists",
+      "item": [
+        {
+          "name": "{taskListId}",
+          "item": [
+            {
+              "name": "tasks",
+              "item": [
+                {
+                  "name": "{taskId}",
+                  "item": [
+                    {
+                      "name": "move",
+                      "item": [
+                        {
+                          "name": "Move a task",
+                          "id": "04792a31-e712-4a44-b161-9aaf460a5faf",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId/move?parent=<string>&previous=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "lists",
+                                ":taskListId",
+                                "tasks",
+                                ":taskId",
+                                "move"
+                              ],
+                              "query": [
+                                {
+                                  "key": "parent",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "previous",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "48264a0a-83a7-4934-afe8-d04071fc71c3",
+                                  "key": "taskListId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "cc304995-c5f5-4c12-8a58-fc869eff7d96",
+                                  "key": "taskId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Moves the specified task to another position in the task list."
+                          },
+                          "response": [
+                            {
+                              "id": "d6682c28-372b-4c4e-aa58-8e42fce43cf3",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId/move?parent=<string>&previous=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "lists",
+                                    ":taskListId",
+                                    "tasks",
+                                    ":taskId",
+                                    "move"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "parent",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "previous",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taskListId"
+                                    },
+                                    {
+                                      "key": "taskId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:50:26.000Z",
+                              "updatedAt": "2026-07-28T01:50:26.000Z",
+                              "uid": "35240-d6682c28-372b-4c4e-aa58-8e42fce43cf3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:50:26.000Z",
+                          "updatedAt": "2026-07-28T01:50:26.000Z",
+                          "uid": "35240-04792a31-e712-4a44-b161-9aaf460a5faf"
+                        }
+                      ],
+                      "id": "698ce9b1-1735-484d-8691-0631f87ebf5a",
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-698ce9b1-1735-484d-8691-0631f87ebf5a"
+                    },
+                    {
+                      "name": "Get a task",
+                      "id": "0cfe2540-22e0-4e0f-b845-5b83cd2c5186",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "tasks",
+                            ":taskId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "69b7e590-f4fc-401f-b5d3-fa46510ece87",
+                              "key": "taskListId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "7b5fa08a-ed6b-447f-94cf-0e29547ec55d",
+                              "key": "taskId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns the specified task."
+                      },
+                      "response": [
+                        {
+                          "id": "97d4d03a-ae96-4925-8aed-b24ef82d8765",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "lists",
+                                ":taskListId",
+                                "tasks",
+                                ":taskId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "taskListId"
+                                },
+                                {
+                                  "key": "taskId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:50:26.000Z",
+                          "updatedAt": "2026-07-28T01:50:26.000Z",
+                          "uid": "35240-97d4d03a-ae96-4925-8aed-b24ef82d8765"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-0cfe2540-22e0-4e0f-b845-5b83cd2c5186"
+                    },
+                    {
+                      "name": "Update a task",
+                      "id": "80155b20-40c7-44d2-b67b-0ee9e48f3814",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "tasks",
+                            ":taskId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4e215d3a-42b8-452f-a5b2-86d5a80c8726",
+                              "key": "taskListId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "4bd02824-f412-4f9f-b3f3-fd507005a379",
+                              "key": "taskId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Updates the specified task."
+                      },
+                      "response": [
+                        {
+                          "id": "ad37d145-6391-4ef4-9295-56cfc73a2294",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "lists",
+                                ":taskListId",
+                                "tasks",
+                                ":taskId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "taskListId"
+                                },
+                                {
+                                  "key": "taskId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:50:26.000Z",
+                          "updatedAt": "2026-07-28T01:50:26.000Z",
+                          "uid": "35240-ad37d145-6391-4ef4-9295-56cfc73a2294"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-80155b20-40c7-44d2-b67b-0ee9e48f3814"
+                    },
+                    {
+                      "name": "Delete a task",
+                      "id": "7e18420e-a21e-494d-94a1-bb7e2f3d0ea5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "tasks",
+                            ":taskId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "655acaee-a6fa-4c17-bfe3-82e70fc40e41",
+                              "key": "taskListId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "fff0c815-402f-4f23-bab8-3464068d4aff",
+                              "key": "taskId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes the specified task from the task list."
+                      },
+                      "response": [
+                        {
+                          "id": "0112e5bb-90bc-46f4-8cf6-3016caf4492e",
+                          "name": "Successful deletion",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/lists/:taskListId/tasks/:taskId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "lists",
+                                ":taskListId",
+                                "tasks",
+                                ":taskId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "taskListId"
+                                },
+                                {
+                                  "key": "taskId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:50:26.000Z",
+                          "updatedAt": "2026-07-28T01:50:26.000Z",
+                          "uid": "35240-0112e5bb-90bc-46f4-8cf6-3016caf4492e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-7e18420e-a21e-494d-94a1-bb7e2f3d0ea5"
+                    }
+                  ],
+                  "id": "9845e177-dea1-4280-8343-7895b5c1ca89",
+                  "createdAt": "2026-07-28T01:50:26.000Z",
+                  "updatedAt": "2026-07-28T01:50:26.000Z",
+                  "uid": "35240-9845e177-dea1-4280-8343-7895b5c1ca89"
+                },
+                {
+                  "name": "List tasks",
+                  "id": "d30658e9-8cd7-41a9-bb39-3f192bb9888c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/lists/:taskListId/tasks?maxResults=<integer>&pageToken=<string>&showCompleted=<boolean>&showHidden=<boolean>&dueMin=<dateTime>&dueMax=<dateTime>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "lists",
+                        ":taskListId",
+                        "tasks"
+                      ],
+                      "query": [
+                        {
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "showCompleted",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "key": "showHidden",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "key": "dueMin",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "key": "dueMax",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "3af607f9-3866-4cbe-9d6c-5d12ee71bd9b",
+                          "key": "taskListId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns all tasks in the specified task list."
+                  },
+                  "response": [
+                    {
+                      "id": "912a87a0-58f8-4b52-83ff-9349e37acd68",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/tasks?maxResults=<integer>&pageToken=<string>&showCompleted=<boolean>&showHidden=<boolean>&dueMin=<dateTime>&dueMax=<dateTime>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "tasks"
+                          ],
+                          "query": [
+                            {
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "showCompleted",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "key": "showHidden",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "key": "dueMin",
+                              "value": "<dateTime>"
+                            },
+                            {
+                              "key": "dueMax",
+                              "value": "<dateTime>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskListId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"id\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"title\": \"<string>\",\n      \"updated\": \"<dateTime>\",\n      \"selfLink\": \"<uri>\",\n      \"parent\": \"<string>\",\n      \"position\": \"<string>\",\n      \"notes\": \"<string>\",\n      \"status\": \"needsAction\",\n      \"due\": \"<dateTime>\",\n      \"completed\": \"<dateTime>\",\n      \"deleted\": \"<boolean>\",\n      \"hidden\": \"<boolean>\",\n      \"links\": [\n        {\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"link\": \"<uri>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"link\": \"<uri>\"\n        }\n      ]\n    },\n    {\n      \"kind\": \"<string>\",\n      \"id\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"title\": \"<string>\",\n      \"updated\": \"<dateTime>\",\n      \"selfLink\": \"<uri>\",\n      \"parent\": \"<string>\",\n      \"position\": \"<string>\",\n      \"notes\": \"<string>\",\n      \"status\": \"needsAction\",\n      \"due\": \"<dateTime>\",\n      \"completed\": \"<dateTime>\",\n      \"deleted\": \"<boolean>\",\n      \"hidden\": \"<boolean>\",\n      \"links\": [\n        {\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"link\": \"<uri>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"link\": \"<uri>\"\n        }\n      ]\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-912a87a0-58f8-4b52-83ff-9349e37acd68"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:50:26.000Z",
+                  "updatedAt": "2026-07-28T01:50:26.000Z",
+                  "uid": "35240-d30658e9-8cd7-41a9-bb39-3f192bb9888c"
+                },
+                {
+                  "name": "Create a task",
+                  "id": "9168baa2-64ae-4d08-8e18-d7d1b7c95220",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/lists/:taskListId/tasks?parent=<string>&previous=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "lists",
+                        ":taskListId",
+                        "tasks"
+                      ],
+                      "query": [
+                        {
+                          "key": "parent",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "previous",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "c6434b21-1c53-479e-969e-f829cf1255b6",
+                          "key": "taskListId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates a new task on the specified task list."
+                  },
+                  "response": [
+                    {
+                      "id": "5c8508e5-218c-4d70-8db1-2a769341393b",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/tasks?parent=<string>&previous=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "tasks"
+                          ],
+                          "query": [
+                            {
+                              "key": "parent",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "previous",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskListId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\",\n  \"parent\": \"<string>\",\n  \"position\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"status\": \"needsAction\",\n  \"due\": \"<dateTime>\",\n  \"completed\": \"<dateTime>\",\n  \"deleted\": \"<boolean>\",\n  \"hidden\": \"<boolean>\",\n  \"links\": [\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"link\": \"<uri>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-5c8508e5-218c-4d70-8db1-2a769341393b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:50:26.000Z",
+                  "updatedAt": "2026-07-28T01:50:26.000Z",
+                  "uid": "35240-9168baa2-64ae-4d08-8e18-d7d1b7c95220"
+                }
+              ],
+              "id": "5f134319-c4c3-48e3-af83-1e2aac141878",
+              "createdAt": "2026-07-28T01:50:26.000Z",
+              "updatedAt": "2026-07-28T01:50:26.000Z",
+              "uid": "35240-5f134319-c4c3-48e3-af83-1e2aac141878"
+            },
+            {
+              "name": "clear",
+              "item": [
+                {
+                  "name": "Clear completed tasks",
+                  "id": "906f4d61-28d9-4acc-bcbb-80b8dbdd9d84",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/lists/:taskListId/clear",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "lists",
+                        ":taskListId",
+                        "clear"
+                      ],
+                      "variable": [
+                        {
+                          "id": "29b42563-d3ef-4e8d-875d-4afff48bde81",
+                          "key": "taskListId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Clears all completed tasks from the specified task list."
+                  },
+                  "response": [
+                    {
+                      "id": "a37fed25-4951-4c60-b876-ea75e722914e",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/lists/:taskListId/clear",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "lists",
+                            ":taskListId",
+                            "clear"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskListId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:50:26.000Z",
+                      "updatedAt": "2026-07-28T01:50:26.000Z",
+                      "uid": "35240-a37fed25-4951-4c60-b876-ea75e722914e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:50:26.000Z",
+                  "updatedAt": "2026-07-28T01:50:26.000Z",
+                  "uid": "35240-906f4d61-28d9-4acc-bcbb-80b8dbdd9d84"
+                }
+              ],
+              "id": "37f51a28-3ee9-420c-8992-90fac44cc464",
+              "createdAt": "2026-07-28T01:50:26.000Z",
+              "updatedAt": "2026-07-28T01:50:26.000Z",
+              "uid": "35240-37f51a28-3ee9-420c-8992-90fac44cc464"
+            }
+          ],
+          "id": "b61b14a3-b9e2-4269-9e1a-dbdbfb5cd35d",
+          "createdAt": "2026-07-28T01:50:26.000Z",
+          "updatedAt": "2026-07-28T01:50:26.000Z",
+          "uid": "35240-b61b14a3-b9e2-4269-9e1a-dbdbfb5cd35d"
+        }
+      ],
+      "id": "353c677b-a91b-4fb7-9846-93035aebed33",
+      "createdAt": "2026-07-28T01:50:26.000Z",
+      "updatedAt": "2026-07-28T01:50:26.000Z",
+      "uid": "35240-353c677b-a91b-4fb7-9846-93035aebed33"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/tasks https://www.googleapis.com/auth/tasks.readonly",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://tasks.googleapis.com/tasks/v1"
+    }
+  ]
+}
