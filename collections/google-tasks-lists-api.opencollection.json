@@ -1,0 +1,234 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Tasks Lists API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showCompleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showHidden",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dueMin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dueMax",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all tasks in the specified task list."
+        },
+        {
+          "info": {
+            "name": "Create a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "previous",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new task on the specified task list."
+        },
+        {
+          "info": {
+            "name": "Get a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the specified task."
+        },
+        {
+          "info": {
+            "name": "Update a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the specified task."
+        },
+        {
+          "info": {
+            "name": "Delete a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the specified task from the task list."
+        },
+        {
+          "info": {
+            "name": "Move a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/tasks/:taskId/move",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "previous",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Moves the specified task to another position in the task list."
+        },
+        {
+          "info": {
+            "name": "Clear completed tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://tasks.googleapis.com/tasks/v1/lists/:taskListId/clear",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Clears all completed tasks from the specified task list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

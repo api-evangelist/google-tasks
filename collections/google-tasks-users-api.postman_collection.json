@@ -1,0 +1,674 @@
+{
+  "item": [
+    {
+      "id": "e5fc6d6b-5cbe-4e3d-981f-3fbbcbad108c",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c96c47d2-8a24-4093-88f7-8aae2f2c5c37",
+          "name": "List task lists",
+          "request": {
+            "name": "List task lists",
+            "description": {
+              "content": "Returns all the authenticated user's task lists.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e6f1c28-b651-4e1a-959e-5982f24491d2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"nextPageToken\": \"string\",\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"etag\": \"string\",\n      \"title\": \"string\",\n      \"updated\": \"1993-10-24T23:55:14.577Z\",\n      \"selfLink\": \"http://EyrkQoRrDeLkbYrUMzrUNQYOd.bnuaTahLyteFkYmuMt4NGy3U.tVE.rf\"\n    },\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"etag\": \"string\",\n      \"title\": \"string\",\n      \"updated\": \"1976-08-28T07:33:14.014Z\",\n      \"selfLink\": \"https://OXyaGtodlizChWTotmHvlhzwWWVe.fyW7RCpzyc6RdK\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04ac1c96-3f73-4bf1-bf49-4f4feff3c5c4",
+          "name": "Create a task list",
+          "request": {
+            "name": "Create a task list",
+            "description": {
+              "content": "Creates a new task list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "51751908-518c-4fbc-8b2c-b35ede3c5b00",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"etag\": \"string\",\n  \"title\": \"string\",\n  \"updated\": \"1982-10-25T21:37:40.836Z\",\n  \"selfLink\": \"https://SpVVIMOrTkYhVFIHEnwNVseUPekF.xwdqpKvDKLZdLMS\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0b43fda-8a9e-4607-b06d-627094b5d71c",
+          "name": "Get a task list",
+          "request": {
+            "name": "Get a task list",
+            "description": {
+              "content": "Returns the authenticated user's specified task list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists",
+                ":taskListId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskListId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6708902f-26bd-47ea-98ad-ac415ef85815",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists",
+                    ":taskListId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskListId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"etag\": \"string\",\n  \"title\": \"string\",\n  \"updated\": \"1982-10-25T21:37:40.836Z\",\n  \"selfLink\": \"https://SpVVIMOrTkYhVFIHEnwNVseUPekF.xwdqpKvDKLZdLMS\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68220567-9c6d-4e56-8869-b16b31104601",
+          "name": "Update a task list",
+          "request": {
+            "name": "Update a task list",
+            "description": {
+              "content": "Updates the authenticated user's specified task list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists",
+                ":taskListId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskListId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "871049dd-4577-4697-9692-71e5a17d1cf7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists",
+                    ":taskListId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskListId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3630f107-b904-4012-aaef-6d903749d4fc",
+          "name": "Patch a task list",
+          "request": {
+            "name": "Patch a task list",
+            "description": {
+              "content": "Updates the authenticated user's specified task list with patch semantics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists",
+                ":taskListId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskListId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09d06259-766c-4357-895e-45a93c88898e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists",
+                    ":taskListId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskListId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updated\": \"<dateTime>\",\n  \"selfLink\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0b8f1b4-a024-4518-9311-3d2626067e39",
+          "name": "Delete a task list",
+          "request": {
+            "name": "Delete a task list",
+            "description": {
+              "content": "Deletes the authenticated user's specified task list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "@me",
+                "lists",
+                ":taskListId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskListId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "334d1fd8-8543-4270-9e7e-ee11fdffb5bd",
+              "name": "Successful deletion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "@me",
+                    "lists",
+                    ":taskListId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskListId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://tasks.googleapis.com/tasks/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/tasks https://www.googleapis.com/auth/tasks.readonly"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a88c63c9-0b39-481a-893d-bf217fb97a60",
+    "name": "Google Tasks Lists Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can manage task lists and individual tasks, including creating, updating, moving, and deleting tasks programmatically.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Tasks Lists Users API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List task lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists",
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all the authenticated user's task lists."
+        },
+        {
+          "info": {
+            "name": "Create a task list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new task list."
+        },
+        {
+          "info": {
+            "name": "Get a task list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists/:taskListId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the authenticated user's specified task list."
+        },
+        {
+          "info": {
+            "name": "Update a task list",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists/:taskListId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the authenticated user's specified task list."
+        },
+        {
+          "info": {
+            "name": "Patch a task list",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists/:taskListId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the authenticated user's specified task list with patch semantics."
+        },
+        {
+          "info": {
+            "name": "Delete a task list",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://tasks.googleapis.com/tasks/v1/users/@me/lists/:taskListId",
+            "params": [
+              {
+                "name": "taskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the authenticated user's specified task list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
