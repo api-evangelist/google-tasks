@@ -27,6 +27,13 @@ tags:
   - Google
   - Productivity
   - Task Management
+  - Task
+  - To-Do
+  - Workspace
+tags_raw:
+  - Google
+  - Productivity
+  - Task Management
   - Tasks
   - Todo
   - Workspace
@@ -37,6 +44,8 @@ apis:
   humanURL: https://developers.google.com/tasks
   baseURL: https://tasks.googleapis.com/tasks/v1
   tags:
+  - List
+  tags_raw:
   - Lists
   properties:
   - type: OpenAPI
@@ -55,6 +64,8 @@ apis:
   humanURL: https://developers.google.com/tasks
   baseURL: https://tasks.googleapis.com/tasks/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
