@@ -209,19 +209,6 @@ paths:
       - Lists
 components:
   schemas:
-    TasksResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Task'
     Task:
       type: object
       properties:
@@ -273,6 +260,19 @@ components:
               link:
                 type: string
                 format: uri
+    TasksResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
   securitySchemes:
     oauth2:
       type: oauth2

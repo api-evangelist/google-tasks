@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Tasks Lists Users API
+  title: Google Tasks Users API
   description: The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can manage task lists and individual tasks, including creating, updating, moving, and deleting tasks programmatically.
   version: v1
   contact:

@@ -1,8 +1,7 @@
 {
   "provider": "google-tasks",
   "sources": [
-    "google-tasks-lists-api-openapi.yml",
-    "google-tasks-users-api-openapi.yml"
+    "_original/tasks.yml"
   ],
   "outputs": [
     "google-tasks-lists-api-openapi.yml",
@@ -12,9 +11,27 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-tasks-lists-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-tasks-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tasks.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tasks.yml: tagged paths GET /users/@me/lists -> Users",
+    "tasks.yml: tagged paths POST /users/@me/lists -> Users",
+    "tasks.yml: tagged paths GET /users/@me/lists/{taskListId} -> Users",
+    "tasks.yml: tagged paths PUT /users/@me/lists/{taskListId} -> Users",
+    "tasks.yml: tagged paths PATCH /users/@me/lists/{taskListId} -> Users",
+    "tasks.yml: tagged paths DELETE /users/@me/lists/{taskListId} -> Users",
+    "tasks.yml: tagged paths GET /lists/{taskListId}/tasks -> Lists",
+    "tasks.yml: tagged paths POST /lists/{taskListId}/tasks -> Lists",
+    "tasks.yml: tagged paths GET /lists/{taskListId}/tasks/{taskId} -> Lists",
+    "tasks.yml: tagged paths PUT /lists/{taskListId}/tasks/{taskId} -> Lists",
+    "tasks.yml: tagged paths DELETE /lists/{taskListId}/tasks/{taskId} -> Lists",
+    "tasks.yml: tagged paths POST /lists/{taskListId}/tasks/{taskId}/move -> Lists",
+    "tasks.yml: tagged paths POST /lists/{taskListId}/clear -> Lists",
+    "tasks.yml: declared missing tag: Lists",
+    "tasks.yml: declared missing tag: Users",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-tasks-lists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-tasks-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
