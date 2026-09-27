@@ -132,19 +132,6 @@ paths:
       - Users
 components:
   schemas:
-    TaskListsResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/TaskList'
     TaskList:
       type: object
       properties:
@@ -163,6 +150,19 @@ components:
         selfLink:
           type: string
           format: uri
+    TaskListsResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskList'
   securitySchemes:
     oauth2:
       type: oauth2
