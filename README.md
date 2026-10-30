@@ -1,4 +1,4 @@
-# Google Tasks (google-tasks)
+# Google Tasks
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,59 +66,152 @@
 
 The Google Tasks API lets you search, read, and update Google Tasks content and metadata. You can create, update, delete, and organize tasks across multiple task lists, move tasks between positions, and manage task completion status programmatically.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-tasks/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-tasks/refs/heads/main/apis.yml)
+**Areas:** Google · Productivity · Task Management · Task · To-Do · Workspace
 
-## Scope
+## Google Tasks on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Tasks is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-tasks/](https://apis.io/providers/google-tasks/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Google
-- Productivity
-- Task Management
-- Tasks
-- Todo
-- Workspace
+- [Google Tasks Lists API](https://apis.io/apis/google-tasks/google-tasks-lists-api/) — The Lists API from Google Tasks — 4 operation(s) for lists.
+- [Google Tasks Users API](https://apis.io/apis/google-tasks/google-tasks-users-api/) — The Users API from Google Tasks — 2 operation(s) for users.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Tasks API v1
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Google Tasks API provides programmatic access to Google Tasks for managing task lists and individual tasks. Supports creating, reading, updating, deleting, moving, and clearing tasks.
+- [Google Tasks Agentic Access](https://apis.io/agentic-access/google-tasks/google-tasks-agentic-access/)
 
-- **Human URL:** [https://developers.google.com/tasks](https://developers.google.com/tasks)
-- **Base URL:** `https://tasks.googleapis.com/tasks/v1`
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://developers.google.com/workspace/tasks/reference/rest)
-- [OpenAPI](openapi/tasks.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/tasks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/tasks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://developers.google.com/workspace/tasks/auth)
-- [Getting Started](https://developers.google.com/workspace/tasks/overview)
-- [JSON Schema](json-schema/tasks.json) — [JSON Schema](https://json-schema.org/specification)
+- [Google Task](https://apis.io/schemas/google-tasks/tasks/)
 
-## Common Properties
+#### JSON-LD (1)
 
-- [GitHub Organization](https://github.com/googleworkspace)
-- [Portal](https://developers.google.com/tasks)
-- [Getting Started](https://developers.google.com/workspace/tasks/overview)
+Linked-data contexts for the provider's vocabulary.
+
+- [Tasks Context](https://apis.io/jsonld/google-tasks/tasks/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Google Tasks Lists API](https://apis.io/collections/google-tasks/open-google-tasks-lists-api/)
+- [Google Tasks Lists Users API](https://apis.io/collections/google-tasks/open-google-tasks-users-api/)
+- [Google Tasks API](https://apis.io/collections/google-tasks/open-tasks/)
+- [Google Tasks Lists API](https://apis.io/collections/google-tasks/postman-google-tasks-lists-api/)
+- [Google Tasks Lists Users API](https://apis.io/collections/google-tasks/postman-google-tasks-users-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Tasks — jsonschema rules](https://apis.io/rules/google-tasks/google-tasks-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Tasks Authentication](https://apis.io/security/google-tasks/google-tasks-authentication/)
+- [Google Tasks Domain Security](https://apis.io/security/google-tasks/google-tasks-domain-security/)
+- [Google Tasks Vulnerability Disclosure](https://apis.io/security/google-tasks/google-tasks-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Tasks Scopes](https://apis.io/scopes/google-tasks/google-tasks-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Tasks Plans Pricing](https://apis.io/plans/google-tasks/google-tasks-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Tasks Rate Limits](https://apis.io/rate-limits/google-tasks/google-tasks-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Tasks Finops](https://apis.io/finops/google-tasks/google-tasks-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://developers.google.com/tasks)
-- [Authentication](https://developers.google.com/workspace/tasks/auth)
-- [Terms of Service](https://developers.google.com/workspace/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
+- [Getting started](https://developers.google.com/workspace/tasks/overview)
 - [Support](https://developers.google.com/tasks/support)
-- [JSON-LD](json-ld/tasks.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Blog](https://workspaceupdates.googleblog.com/feeds/posts/default?alt=rss)
+- [Terms of service](https://developers.google.com/workspace/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleworkspace)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 47.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 61.5 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 28.9 |
+
+**Agent readiness 27.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-tasks/](https://apis.io/providers/google-tasks/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Tasks: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-tasks/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
